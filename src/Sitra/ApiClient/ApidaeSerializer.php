@@ -188,7 +188,7 @@ class ApidaeSerializer
         }
 
         // Expand the URI template.
-        $uri = \GuzzleHttp\uri_template($operation->getUri(), $variables);
+        $uri = (count($variables) !== 0) ? \GuzzleHttp\uri_template($operation->getUri(), $variables) : $operation->getUri();
 
         return new Request(
           $operation->getHttpMethod(),
