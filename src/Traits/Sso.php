@@ -12,7 +12,7 @@ trait Sso
     /**
      * @return string
      */
-    public function getSsoUrl(string $ssoRedirectUrl = null): string
+    public function getSsoUrl(?string $ssoRedirectUrl = null): string
     {
         $params = array(
             'response_type' => 'code',
